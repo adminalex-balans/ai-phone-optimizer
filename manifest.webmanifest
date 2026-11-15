@@ -1,0 +1,9 @@
+{
+  "name": "AI Phone Optimizer",
+  "short_name": "AI Optimizer",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0c0f17",
+  "theme_color": "#10131c",
+  "description": "Умный помощник по настройке iPhone"
+}
