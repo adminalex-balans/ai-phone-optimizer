@@ -3,97 +3,164 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#10131c">
+<meta name="color-scheme" content="light dark">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="AI Optimizer">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Оптимизатор">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-192.png">
 <title>AI Phone Optimizer</title>
 <style>
-:root{color-scheme:dark;--bg:#0c0f17;--panel:#171c28;--panel2:#202738;--line:#2b3447;--txt:#f4f6fb;--muted:#9aa6bb;--blue:#75a7ff;--green:#65d6a2;--amber:#ffca75}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 85% -10%,#24365b 0,transparent 42%),var(--bg);color:var(--txt);font:15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:env(safe-area-inset-top) 16px calc(24px + env(safe-area-inset-bottom))}
-.wrap{max-width:720px;margin:auto}.top{display:flex;align-items:center;gap:12px;padding:22px 2px 16px}.logo{width:46px;height:46px;border-radius:15px;background:linear-gradient(135deg,#74a8ff,#8d79ff);display:grid;place-items:center;font-size:23px;box-shadow:0 8px 28px #557fe744}.top h1{font-size:19px;margin:0}.sub{color:var(--muted);font-size:12px;margin-top:4px}.pill{margin-left:auto;border:1px solid #315b4b;background:#173326;color:#8de2b7;padding:6px 9px;border-radius:20px;font-size:11px}
-.hero{background:linear-gradient(135deg,#202e49,#1a2030 70%);border:1px solid #354663;border-radius:23px;padding:19px;margin:8px 0 16px}.eyebrow{color:#a9c8ff;font-size:11px;text-transform:uppercase;letter-spacing:1.2px}.hero h2{font-size:23px;line-height:1.18;margin:9px 0}.hero p{color:#c1cbe0;line-height:1.45;margin:0;font-size:13px}.row{display:flex;gap:10px;align-items:center}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0}.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:15px}.card h3{font-size:14px;margin:0 0 6px}.muted{color:var(--muted);font-size:12px;line-height:1.45}.big{font-size:24px;font-weight:700;margin:8px 0}.section{font-size:16px;margin:22px 2px 10px}.modes{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.mode{background:var(--panel);border:1px solid var(--line);color:var(--txt);border-radius:16px;padding:13px;text-align:left;min-height:91px}.mode.active{border-color:var(--blue);background:#1b2b47;box-shadow:inset 0 0 0 1px #75a7ff44}.mode .ico{font-size:20px}.mode b{display:block;margin:6px 0 3px}.mode small{color:var(--muted);font-size:11px}.btn{border:0;background:linear-gradient(100deg,#79aaff,#9a83ff);color:#101626;font-weight:700;border-radius:13px;padding:13px 16px;font-size:14px;width:100%;margin-top:12px}.btn.secondary{background:var(--panel2);color:var(--txt);border:1px solid var(--line)}.list{display:grid;gap:9px}.item{display:flex;gap:10px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);padding:12px;border-radius:14px}.item input{width:18px;height:18px;margin:1px 0 0;accent-color:#78aaff}.item strong{font-size:13px}.item p{margin:4px 0 0;color:var(--muted);font-size:11px;line-height:1.4}.notice{border:1px solid #69502d;background:#2b2419;color:#f6d39a;padding:12px;border-radius:14px;font-size:12px;line-height:1.45;margin-top:12px}.good{border-color:#285b47;background:#152a22;color:#a7e7c6}.footer{text-align:center;color:#738096;font-size:10px;padding:22px 8px}.bar{height:7px;border-radius:9px;background:#30394b;overflow:hidden;margin:9px 0}.bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,#68d7a2,#78aaff);transition:width .2s}.tag{font-size:10px;color:#a9c8ff;border:1px solid #385078;padding:4px 7px;border-radius:20px}
-@media(min-width:600px){.hero{padding:24px}.hero h2{font-size:28px}.grid{grid-template-columns:repeat(4,1fr)}}
+:root{color-scheme:light dark;--bg:#EDEEF2;--sf:#fff;--ink:#14171D;--mu:#667085;--ln:#DDE0E7;--ac:#2F54EB;--acs:#E6EBFF;--ok:#1B9A68;--wn:#C9771B;--bd:#D23F37;--on:#fff}
+@media(prefers-color-scheme:dark){:root{--bg:#0D0F14;--sf:#171A21;--ink:#EFF2F7;--mu:#8F98A8;--ln:#262A34;--ac:#8EA2FF;--acs:#1E2540;--ok:#4CD39A;--wn:#F0A650;--bd:#FF7A70;--on:#0D0F14}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.4 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;padding:max(14px,env(safe-area-inset-top)) 16px calc(28px + env(safe-area-inset-bottom))}
+main{max-width:620px;margin:auto}
+h1{font-size:32px;letter-spacing:-.02em;margin:18px 0 2px}
+h2{font-size:13px;font-weight:600;color:var(--mu);margin:26px 16px 8px}
+.sub,.note{color:var(--mu);font-size:13px;margin:4px 0 0}.note{margin:8px 16px 0}
+.grp{background:var(--sf);border-radius:14px;overflow:hidden}
+.row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 16px;border-top:1px solid var(--ln)}
+.grp>:first-child{border-top:0}.row .v{text-align:right;font-weight:600;font-size:14px}.row small{display:block;color:var(--mu);font-size:12px;font-weight:400}
+.ok{color:var(--ok)}.wn{color:var(--wn)}.bd{color:var(--bd)}.mu{color:var(--mu)}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);background:var(--ln);border-radius:11px;padding:2px;margin-top:16px}
+.seg button{border:0;background:none;color:var(--ink);font:inherit;font-size:13px;padding:8px 2px;border-radius:9px}
+.seg button.on{background:var(--sf);font-weight:650;box-shadow:0 1px 3px #0003}
+#ring{width:196px;height:196px;border-radius:50%;margin:24px auto 10px;padding:9px;background:conic-gradient(var(--ac) calc(var(--p,0)*1%),var(--ln) 0)}
+#scan{width:100%;height:100%;border-radius:50%;border:0;background:var(--ac);color:var(--on);font:700 23px/1.15 inherit;font-family:inherit;letter-spacing:-.01em}
+#scan:disabled{opacity:.85}
+#sstat{text-align:center;color:var(--mu);font-size:13px;margin:0 12px;min-height:20px}
+.card{background:var(--sf);border-radius:14px;padding:14px 16px;margin-bottom:10px}
+.card .hd{display:flex;gap:10px;align-items:flex-start;justify-content:space-between}.card b{font-weight:600}
+.card p{margin:6px 0 0;color:var(--mu);font-size:14px}
+.path{margin-top:10px;padding:9px 11px;border-radius:10px;background:var(--bg);font-size:13px}
+.bt{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.bt button,.undo{border:0;border-radius:11px;padding:11px;font:inherit;font-weight:600;font-size:14px;background:var(--acs);color:var(--ac)}
+.bt button:first-child{background:var(--ac);color:var(--on)}
+.tag{font-size:11px;border-radius:8px;padding:3px 7px;background:var(--acs);color:var(--ac);flex:none;font-weight:600}
+.s3{background:color-mix(in srgb,var(--bd) 16%,transparent);color:var(--bd)}.s2{background:color-mix(in srgb,var(--wn) 18%,transparent);color:var(--wn)}
+.dn{display:flex;align-items:center;justify-content:space-between;gap:10px}.dn small{display:block;color:var(--mu);font-size:12px}.undo{padding:7px 12px;font-size:13px}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header class="top"><div class="logo">✦</div><div><h1>AI Phone Optimizer</h1><div class="sub">Помощник по настройке iPhone</div></div><span class="pill">iOS • без Jailbreak</span></header>
-<section class="hero">
- <div class="eyebrow">Умная оптимизация</div>
- <h2>Больше контроля.<br>Меньше лишней нагрузки.</h2>
- <p>Подбирай настройки под игры, автономность и повседневное использование. Приложение не меняет скрытые параметры iOS и не обещает невозможного.</p>
-</section>
-<div class="grid">
- <div class="card"><div class="muted">Профиль сейчас</div><div class="big" id="currentMode">Баланс</div><span class="tag">Выбирается вручную</span></div>
- <div class="card"><div class="muted">Чек-лист</div><div class="big" id="progress">0%</div><div class="bar"><span id="progressBar"></span></div><div class="muted">Выполнено рекомендаций</div></div>
-</div>
-<h2 class="section">Выбери режим</h2>
-<div class="modes" role="group" aria-label="Режим оптимизации">
- <button class="mode" data-mode="gaming"><span class="ico">🎮</span><b>Игры</b><small>Стабильность и меньше нагрева</small></button>
- <button class="mode" data-mode="battery"><span class="ico">🔋</span><b>Экономия</b><small>Продлить работу от заряда</small></button>
- <button class="mode active" data-mode="balanced"><span class="ico">⚖️</span><b>Баланс</b><small>Повседневный режим</small></button>
- <button class="mode" data-mode="auto"><span class="ico">✦</span><b>AI-подбор</b><small>Рекомендации по ситуации</small></button>
-</div>
-<h2 class="section">Рекомендации для iPhone</h2>
-<div class="list" id="recommendations"></div>
-<div class="notice" id="modeNote">Баланс: оставь важные функции включёнными и отключай только то, чем действительно не пользуешься.</div>
-<h2 class="section">Быстрая проверка</h2>
-<div class="card">
- <h3>Что происходит с телефоном?</h3>
- <p class="muted">Отметь наблюдения. Приложение сформирует безопасные рекомендации — оно не считывает температуру батареи или её реальную ёмкость.</p>
- <div class="list" style="margin-top:12px">
-  <label class="item"><input type="checkbox" id="hot"><span><strong>Корпус заметно нагревается</strong><p>Особенно во время рекламы или игр.</p></span></label>
-  <label class="item"><input type="checkbox" id="dim"><span><strong>Экран сам уменьшает яркость</strong><p>Это может быть признаком тепловой защиты.</p></span></label>
-  <label class="item"><input type="checkbox" id="lag"><span><strong>Появляются лаги после нагрева</strong><p>Производительность может временно снижаться.</p></span></label>
+<main>
+ <h1>Оптимизатор</h1><p class="sub">iPhone 11 · производительность и автономность</p>
+ <div id="ring"><button id="scan">Сканировать</button></div>
+ <p id="sstat">Замеры занимают около 10 секунд. Не закрывай экран.</p>
+ <div class="seg" id="modes" role="group" aria-label="Цель"></div>
+ <div id="res" hidden>
+  <h2>Измерено на этом телефоне</h2><div class="grp" id="meas"></div>
+  <p class="note">Сайт не видит батарею, память, геолокацию и фоновую активность. Эти настройки проверяет список ниже.</p>
  </div>
- <button class="btn" id="analyze">Проанализировать симптомы</button>
- <div id="analysisResult" class="notice" style="display:none"></div>
-</div>
-<div class="notice good"><b>Важно:</b> если iPhone становится очень горячим, прекрати игру, отключи зарядку, убери телефон от солнца и дай ему остыть естественно. Не охлаждай его в холодильнике.</div>
-<h2 class="section">Что приложение может и не может</h2>
-<div class="card"><h3>Доступно</h3><p class="muted">Профили рекомендаций, чек-листы, инструкции, сохранение выбранного режима на этом устройстве и работа офлайн после первой загрузки.</p><h3 style="margin-top:14px">Ограничения iOS</h3><p class="muted">Safari/PWA не может управлять частотами процессора, принудительно закрывать другие приложения, читать температуру аккумулятора, достоверную ёмкость батареи или самостоятельно переключать системные настройки.</p></div>
-<div class="footer">AI Phone Optimizer • Версия 0.1 • Рекомендации не заменяют диагностику в сервисе</div>
-</div>
+ <div id="tw" hidden>
+  <h2 id="cnt"></h2><div id="open"></div>
+  <h2 id="dh">Готово</h2><div class="grp" id="done"></div>
+  <p class="note">Apple не даёт сайтам и приложениям открывать Настройки на нужном пункте, поэтому путь указан текстом. Перезапусти скан через неделю и сравни результаты.</p>
+ </div>
+</main>
 <script>
-const profiles={
- gaming:{name:"Игры",note:"Игровой профиль: перед запуском игры снизь яркость до комфортного уровня, отключи зарядку и закрой ненужные задачи вручную. Не включай режим энергосбережения автоматически: он может ограничивать производительность.",items:[
- ["Сними чехол на время игры","Это может улучшить отдачу тепла, если чехол плотный."],
- ["Не играй во время зарядки","Зарядка добавляет тепловую нагрузку."],
- ["Уменьши яркость до комфортной","Экран тоже потребляет энергию и выделяет тепло."],
- ["Отключи загрузки и обновления на время игры","Поставь на паузу ненужные загрузки и обновления приложений."],
- ["Делай паузу при заметном нагреве","Если яркость сама падает и появляются лаги — дай телефону остыть."]
- ]},
- battery:{name:"Экономия",note:"Экономия: используй режим энергосбережения iOS, снижай яркость и проверь, какие приложения расходуют заряд в Настройки → Аккумулятор.",items:[
- ["Включи режим энергосбережения","Настройки → Аккумулятор → Режим энергосбережения."],
- ["Уменьши яркость и автоблокировку","Настройки → Экран и яркость."],
- ["Проверь расход приложений","Настройки → Аккумулятор: смотри расход за последние 24 часа и 10 дней."],
- ["Отключи ненужную геолокацию","Настройки → Конфиденциальность и безопасность → Службы геолокации."],
- ["Оставь фоновое обновление только нужным приложениям","Настройки → Основные → Обновление контента."]
- ]},
- balanced:{name:"Баланс",note:"Баланс: не отключай системные функции вслепую. Оставь полезные уведомления и службы, а фоновые разрешения пересмотри для приложений, которыми редко пользуешься.",items:[
- ["Проверь расход аккумулятора","Настройки → Аккумулятор."],
- ["Установи комфортную яркость и автоблокировку","Настройки → Экран и яркость."],
- ["Пересмотри фоновое обновление","Отключай его только для ненужных приложений."],
- ["Проверь свободное место","Настройки → Основные → Хранилище iPhone."],
- ["Устанавливай обновления iOS и приложений осознанно","Сначала проверь совместимость и отзывы, затем обновляйся."]
- ]},
- auto:{name:"AI-подбор",note:"AI-подбор использует выбранные симптомы и твои ответы, а не скрытую телеметрию. Это рекомендации, а не автоматическое управление iOS.",items:[
- ["Если греется — прекрати тяжёлую нагрузку","Дай iPhone остыть естественно."],
- ["Если падает яркость — проверь перегрев","Автоматическое снижение яркости может сопровождать тепловую защиту."],
- ["Если быстро садится — проверь статистику","Настройки → Аккумулятор покажут приложения с высоким расходом."],
- ["Если лагает постоянно — проверь хранилище и обновления","Не устанавливай сомнительные «ускорители» и очистители памяти."],
- ["Если батарея неизвестная — проверь её в сервисе","Сообщение о неизвестной детали не позволяет достоверно оценить её состояние."]
- ]}
-};
-let mode=localStorage.getItem("mode")||"balanced", done=JSON.parse(localStorage.getItem("done")||"{}");
-function render(){document.querySelectorAll(".mode").forEach(b=>b.classList.toggle("active",b.dataset.mode===mode));const p=profiles[mode];document.getElementById("currentMode").textContent=p.name;document.getElementById("modeNote").textContent=p.note;const root=document.getElementById("recommendations");root.innerHTML="";p.items.forEach((it,i)=>{const id=mode+"-"+i;const lab=document.createElement("label");lab.className="item";const cb=document.createElement("input");cb.type="checkbox";cb.checked=!!done[id];cb.addEventListener("change",()=>{done[id]=cb.checked;localStorage.setItem("done",JSON.stringify(done));updateProgress()});const span=document.createElement("span");const strong=document.createElement("strong");strong.textContent=it[0];const desc=document.createElement("p");desc.textContent=it[1];span.append(strong,desc);lab.append(cb,span);root.append(lab)});updateProgress()}
-function updateProgress(){const checks=[...document.querySelectorAll("#recommendations input")];const n=checks.filter(x=>x.checked).length;const pct=checks.length?Math.round(n/checks.length*100):0;document.getElementById("progress").textContent=pct+"%";document.getElementById("progressBar").style.width=pct+"%"}
-document.querySelectorAll(".mode").forEach(b=>b.addEventListener("click",()=>{mode=b.dataset.mode;localStorage.setItem("mode",mode);render()}));
-document.getElementById("analyze").addEventListener("click",()=>{const hot=document.getElementById("hot").checked,dim=document.getElementById("dim").checked,lag=document.getElementById("lag").checked;const r=document.getElementById("analysisResult");r.style.display="block";if(hot&&(dim||lag)){r.textContent="Похоже на тепловое ограничение: прекрати тяжёлую игру, отключи зарядку, снизь яркость и дай устройству остыть. Если это повторяется даже при лёгкой нагрузке или корпус становится обжигающе горячим — нужна диагностика аккумулятора и телефона в сервисе."}else if(hot){r.textContent="Есть нагрев. Убери чехол, избегай зарядки во время игры и наблюдай, проходит ли нагрев после снижения нагрузки."}else if(dim||lag){r.textContent="Падение яркости или лаги без заметного нагрева могут иметь и другие причины. Проверь свободное место, обновления и расход батареи."}else{r.textContent="Отмеченных симптомов нет. Используй обычный профиль и проверяй расход в настройках iOS."}});
-render();
-if("serviceWorker" in navigator && location.protocol.startsWith("http")) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+const $=s=>document.querySelector(s);
+const E=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
+const KEY='apo-v3';
+const M={bal:['Баланс',{}],sav:['Автономность',{bat:1.5,perf:.8}],spd:['Скорость',{perf:1.5,bat:.7}]};
+// [id, категория, важность 1-3, название, путь, зачем]
+const ITEMS=[
+['batt','perf',3,'Проверь здоровье аккумулятора','Настройки → Аккумулятор → Состояние аккумулятора','Ниже 80% ёмкости или с сообщением о снижении пиковой производительности iPhone тормозит и выключается при 20–30%. Это самая частая причина вялости: нужна замена в сервисе, оригинальной или сертифицированной деталью.'],
+['store','perf',3,'Держи свободными хотя бы 10–15% памяти','Настройки → Основные → Хранилище iPhone','При нехватке места iOS хуже кэширует и обновляется, телефон тормозит. Начни с «Выгрузить неиспользуемые» и больших видео.'],
+['bg','bat',3,'Оставь фоновое обновление только нужным приложениям','Настройки → Основные → Обновление контента','Приложения в фоне будят процессор и сеть. Оставь 3–5 (мессенджеры, банк), остальным выключи.'],
+['loc','bat',2,'Переведи геолокацию на «При использовании»','Настройки → Конфиденциальность и безопасность → Службы геолокации','«Всегда» держит GPS и сеть в работе. Постоянный доступ оставь навигации и паре нужных сервисов.'],
+['sys','bat',2,'Отключи лишние системные службы геолокации','Службы геолокации → Системные службы','Выключи аналитику iPhone, улучшение карт, значимые места и рекламу на основе геопозиции. Основные функции от этого не страдают.'],
+['not','bat',2,'Отключи уведомления ненужным приложениям','Настройки → Уведомления','Каждое уведомление включает экран и сеть. Оставь только то, что требует реакции.'],
+['mot','perf',2,'Включи «Уменьшение движения»','Настройки → Универсальный доступ → Движение','Меньше анимаций, интерфейс отзывчивее на iPhone 11.'],
+['tra','perf',2,'Включи «Понижение прозрачности»','Настройки → Универсальный доступ → Дисплей и размер текста','Размытие и полупрозрачные слои нагружают графику. Без них интерфейс плавнее и телефон холоднее.'],
+['ab','bat',2,'Включи автояркость','Настройки → Универсальный доступ → Дисплей и размер текста → Автояркость','Экран — главный потребитель. Автояркость убавляет подсветку в помещении.'],
+['lock','bat',2,'Поставь автоблокировку 30 секунд – 1 минута','Настройки → Экран и яркость → Автоблокировка','Меньше времени экран горит впустую.'],
+['chg','bat',2,'Включи оптимизированную зарядку','Настройки → Аккумулятор → Состояние аккумулятора','Ночью iOS держит 80% и дозаряжает к утру. Это замедляет износ аккумулятора.'],
+['lpm','bat',1,'Используй режим энергосбережения осознанно','Настройки → Аккумулятор → Режим энергосбережения','Урезает фон и частоту работы, даёт лишние часы автономности, но снижает скорость. Включай при заряде ниже 30%, для скорости держи выключенным.'],
+['wake','bat',1,'Выключи «Поднятие для активации»','Настройки → Экран и яркость','Меньше случайных включений экрана в кармане и на столе.'],
+['hap','bat',1,'Выключи тактильный отклик клавиатуры','Настройки → Звуки и тактильные сигналы → Отклик клавиатуры','Вибромотор срабатывает на каждую букву и расходует заряд.'],
+['siri','perf',1,'Отключи предложения Siri и индексацию в поиске','Настройки → Siri и Поиск','Меньше фоновой индексации приложений и контента. Для редких приложений выключи «Показывать в поиске».'],
+['mail','bat',1,'Переведи почту с Push на выборку','Настройки → Почта → Учётные записи → Загрузка данных','Push держит соединение постоянно. Выборка раз в 15–30 минут экономит заряд.'],
+['ana','bat',1,'Выключи отправку аналитики','Настройки → Конфиденциальность и безопасность → Аналитика и улучшения','Меньше фоновой отправки данных.'],
+['upd','bat',1,'Обновляй приложения вручную','Настройки → App Store → Обновления приложений','Автообновления грузят сеть и процессор в самые неудобные моменты. Обновляй на зарядке и Wi-Fi.'],
+['wid','bat',1,'Убери лишние виджеты','Долгое нажатие на экране → «–» на виджете','Живые виджеты периодически просыпаются и тянут данные.'],
+['reb','perf',1,'Перезагружай iPhone раз в неделю','Боковая кнопка + громкость → «Выключить»','Очищает временные процессы и кэши. Бесплатно и действительно помогает при лагах.']
+];
+let S={mode:'bal',done:{},scan:null,hist:[]},busy=false;
+try{const o=JSON.parse(localStorage.getItem(KEY));if(o)S={...S,...o}}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+const pr=r=>r.imp*(M[S.mode][1][r.cat]||1);
+
+function list(){
+ const sc=S.scan;let L=ITEMS.map(([id,cat,imp,t,p,w])=>({id,cat,imp,t,p,w}));
+ if(sc&&sc.drop>12)L.push({id:'heat',cat:'perf',imp:3,t:'Телефон теряет скорость под нагрузкой',p:'Без настроек: чехол, зарядка, солнце',w:'За время теста скорость упала на '+Math.round(sc.drop)+'%. Сними плотный чехол, отключи зарядку, убери с солнца, дай остыть и просканируй снова. Если повторяется, смотри пункт про аккумулятор.'});
+ if(sc&&sc.fps>20&&sc.fps<42){const x=L.find(r=>r.id=='lpm');x.w+=' Сейчас режим, похоже, включён.';if(S.mode=='spd')x.imp=3}
+ return L.sort((a,b)=>pr(b)-pr(a));
+}
+
+function card(r){
+ const c=E('div','card'),h=E('div','hd'),b=E('b'),tg=E('span','tag s'+r.imp,['','Немного','Заметно','Сильно'][r.imp]);
+ b.textContent=r.t;h.append(b,tg);
+ const p=E('p');p.textContent=r.w;
+ const pa=E('div','path');pa.textContent=r.p;
+ const bt=E('div','bt'),a=E('button'),z=E('button');a.textContent='Сделал';z.textContent='Уже так';
+ a.onclick=()=>{S.done[r.id]='done';save();render()};z.onclick=()=>{S.done[r.id]='ok';save();render()};
+ bt.append(a,z);c.append(h,p,pa,bt);return c;
+}
+
+function render(){
+ const m=$('#modes');m.innerHTML='';
+ Object.keys(M).forEach(k=>{const b=E('button',S.mode==k?'on':'');b.textContent=M[k][0];b.onclick=()=>{S.mode=k;save();render()};m.append(b)});
+ const sc=S.scan;$('#res').hidden=$('#tw').hidden=!sc;if(!sc)return;
+ const g=$('#meas');g.innerHTML='';
+ const row=(l,v,c,s)=>{const r=E('div','row');const a=E('span');a.textContent=l;const b=E('span','v '+c);b.textContent=v;if(s){const i=E('small');i.textContent=s;a.append(i)}r.append(a,b);g.append(r)};
+ const f=sc.fps;
+ if(f>20&&f<42)row('Режим энергосбережения','Похоже, включён','wn','Кадры ограничены до ~'+Math.round(f)+' к/с');
+ else if(f>=42&&f<=75)row('Режим энергосбережения','Не обнаружен','ok','Частота кадров ~'+Math.round(f)+' к/с');
+ else row('Режим энергосбережения','Не определён','mu');
+ const best=Math.max(...S.hist.map(h=>h.score),sc.score);
+ row('Скорость процессора',sc.score+' баллов',S.hist.length>1&&sc.score<best*.85?'wn':'ok',S.hist.length>1?Math.round(sc.score/best*100)+'% от твоего лучшего замера':'Первый замер. Сравнивай со следующими');
+ row('Стабильность под нагрузкой',sc.drop<5?'Стабильно':sc.drop<12?'Небольшое падение':'Заметное падение',sc.drop<5?'ok':sc.drop<12?'wn':'bd','Скорость к концу теста: −'+Math.max(0,Math.round(sc.drop))+'%');
+ row('Уменьшение движения',sc.rm?'Включено':'Выключено',sc.rm?'ok':'wn');
+ row('Понижение прозрачности',sc.rt==null?'Safari не сообщает':sc.rt?'Включено':'Выключено',sc.rt==null?'mu':sc.rt?'ok':'wn');
+ const L=list(),open=L.filter(r=>!S.done[r.id]),dn=L.filter(r=>S.done[r.id]);
+ $('#cnt').textContent=open.length?`Что изменить: ${open.length} из ${L.length}`:'Всё проверено';
+ $('#open').replaceChildren(...open.map(card));
+ $('#dh').hidden=$('#done').hidden=!dn.length;
+ $('#done').replaceChildren(...dn.map(r=>{
+  const w=E('div','row dn'),s=E('span'),u=E('button','undo','Вернуть');
+  s.textContent=r.t;const i=E('small');i.textContent=S.done[r.id]=='auto'?'Проверено автоматически':S.done[r.id]=='ok'?'Уже так':'Сделано';s.append(i);
+  u.onclick=()=>{delete S.done[r.id];save();render()};w.append(s,u);return w;
+ }));
+}
+
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+const fpsTest=()=>new Promise(res=>{let n=0,t0=0,t=0;const f=ts=>{t=ts;if(!t0)t0=ts;else n++;n<45?requestAnimationFrame(f):res(1000/((t-t0)/n))};requestAnimationFrame(f)});
+function bench(ms){const t0=performance.now();let n=0,x=1;while(performance.now()-t0<ms){for(let i=0;i<20000;i++){x=(x*1664525+1013904223)>>>0;x^=x>>>7}n+=20000}return n/ms}
+
+async function scan(){
+ if(busy)return;busy=true;const b=$('#scan'),ring=$('#ring');b.disabled=true;
+ const set=(p,t)=>{ring.style.setProperty('--p',p);b.textContent=t||p+'%'};
+ $('#sstat').textContent='Проверяю частоту кадров…';set(3);
+ const fps=await fpsTest();set(15);
+ $('#sstat').textContent='Нагружаю процессор, телефон может слегка нагреться…';
+ const r=[];for(let i=0;i<5;i++){await wait(40);r.push(bench(300));set(15+(i+1)*17)}
+ const a=(r[0]+r[1])/2,z=(r[3]+r[4])/2,score=Math.round(a/1000),drop=(1-z/a)*100;
+ const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const rt=matchMedia('(prefers-reduced-transparency)').media!=='not all'?matchMedia('(prefers-reduced-transparency: reduce)').matches:null;
+ S.scan={t:Date.now(),fps,score,drop,rm,rt};
+ S.hist=[...S.hist,{t:Date.now(),score,drop}].slice(-20);
+ const auto=(id,v)=>{if(v)S.done[id]='auto';else if(S.done[id]=='auto')delete S.done[id]};
+ auto('mot',rm);if(rt!==null)auto('tra',rt);
+ save();set(100,'Готово');render();busy=false;b.disabled=false;
+ $('#sstat').textContent='Скан завершён. Нажми ещё раз, чтобы повторить.';
+ setTimeout(()=>{b.textContent='Сканировать';ring.style.setProperty('--p',0)},1800);
+ $('#res').scrollIntoView({behavior:'smooth'});
+}
+$('#scan').onclick=scan;render();
+if('serviceWorker' in navigator&&location.protocol.startsWith('http'))addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 </script>
-</body></html>
+</body>
+</html>

@@ -1,9 +1,17 @@
 {
+  "id": "./",
   "name": "AI Phone Optimizer",
-  "short_name": "AI Optimizer",
+  "short_name": "Оптимизатор",
+  "description": "Проверка и план оптимизации iPhone: батарея, память, нагрев",
+  "lang": "ru",
   "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#0c0f17",
-  "theme_color": "#10131c",
-  "description": "Умный помощник по настройке iPhone"
+  "orientation": "portrait",
+  "background_color": "#0D0F14",
+  "theme_color": "#0D0F14",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png"}
+  ]
 }
